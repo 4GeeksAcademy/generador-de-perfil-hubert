@@ -33,14 +33,26 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${variables.name ? variables.name : "Pepa"} ${
+    variables.lastName ? variables.lastName : "Peponcia"
+  } </h1>
+          <h2>${variables.role ? variables.role : "Carpintera"}</h2>
+          <h3>${variables.country || "Belgica"} ${","} ${variables.city ||
+    "Brusellas"} </h3>          
+          <ul class=${variables.socialMediaPosition}>       
+            <li><a href="https://twitter.com/${
+              variables.twitter ? variables.twitter : "jujalag"
+            }"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github ? variables.github : "IverNando"
+            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/${
+              variables.linkedin
+                ? variables.linkedin
+                : "hubert-antoine-carrasset-5aa1142b3"
+            }"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${variables.instagram ||
+              "karma_luey/"}"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
